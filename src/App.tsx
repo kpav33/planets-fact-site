@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { GlobalStyles } from "./GlobalStyle.style";
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyles />
       <h1>Testing Netlify deployment</h1>
     </div>
   );
