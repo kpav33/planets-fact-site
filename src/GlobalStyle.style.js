@@ -20,7 +20,10 @@ export const GlobalStyles = createGlobalStyle`
         --red: hsl(2, 68%, 53%);
         --orange: hsl(17, 73%, 46%);
         --light-green: hsl(169, 73%, 44%);
-        --birght-blue: hsl(222, 87%, 56%);
+        --bright-blue: hsl(222, 87%, 56%);
+        --font-spartan: "Spartan", sans-serif;
+        --font-antonio: "Antonio", sans-serif;
+
 
     }
     *,
@@ -38,6 +41,7 @@ export const GlobalStyles = createGlobalStyle`
         color: var(--text-color);
         background: url(${backgroundStars});
         // background-repeat: no-repeat;
+        // background-position: right;
         background-color: var(--background);
         font-size: 14px;
         font-family: "Spartan", sans-serif;
