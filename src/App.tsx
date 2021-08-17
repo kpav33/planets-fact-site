@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GlobalStyles } from "./GlobalStyle.style";
 import data from "./data.json";
 
@@ -10,12 +10,21 @@ import PlanetInfo from "./components/PlanetInfo";
 //console.log(data[0].planet);
 
 function App() {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   return (
     <div className="App">
       <GlobalStyles />
-      <Header />
-      <MobilePlanetMenu />
-      <PlanetInfo data={data} />
+      <Header
+        showMobileMenu={showMobileMenu}
+        setShowMobileMenu={setShowMobileMenu}
+      />
+      {!showMobileMenu && (
+        <>
+          <MobilePlanetMenu />
+          <PlanetInfo data={data} />
+        </>
+      )}
     </div>
   );
 }

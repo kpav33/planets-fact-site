@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-export default function Header() {
+import MobileMenu from "./MobileMenu";
+
+interface IProps {
+  showMobileMenu: boolean;
+  setShowMobileMenu: React.Dispatch<React.SetStateAction<any>>;
+}
+
+export default function Header({ showMobileMenu, setShowMobileMenu }: IProps) {
+  // const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // console.log(windowWidth);
+  // console.log(showMobileMenu);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth);
+      setShowMobileMenu(false);
+    });
+  }, [windowWidth]);
+
   return (
-    <StyledHeader>
-      <h1>The planets</h1>
-      <div>Mobile Nav menu</div>
-    </StyledHeader>
+    <>
+      <StyledHeader>
+        <h1>The planets</h1>
+        {windowWidth >= 768 ? (
+          <div>Desktop Menu</div>
+        ) : (
+          <GiHamburgerMenu
+            size="24px"
+            onClick={() => setShowMobileMenu((prevState: any) => !prevState)}
+            fill={showMobileMenu ? "#979797" : "var(--text-color)"}
+          />
+        )}
+      </StyledHeader>
+      {showMobileMenu && <MobileMenu />}
+    </>
   );
 }
 
@@ -24,5 +55,11 @@ const StyledHeader = styled.header`
     font-size: 28px;
     margin: 0;
     padding: 0;
+  }
+
+  svg {
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
