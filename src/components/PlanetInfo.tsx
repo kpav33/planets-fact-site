@@ -29,16 +29,16 @@ interface IProps {
       internal: string;
       geology: string;
     };
-  }[];
+  };
 }
 
 export default function PlanetInfo({ data }: IProps) {
   // console.log(data[2].images.planet);
   return (
     <PlanetInfoContainer>
-      <PlanetImage img={data[2].images} />
-      <PlanetText data={data[2]} />
-      <PlanetStats data={data[2]} />
+      <PlanetImage img={data.images} />
+      <PlanetText data={data} />
+      <PlanetStats data={data} />
     </PlanetInfoContainer>
   );
 }

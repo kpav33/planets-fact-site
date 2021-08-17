@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 import MobileMenu from "./MobileMenu";
 
@@ -22,10 +23,16 @@ export default function Header({ showMobileMenu, setShowMobileMenu }: IProps) {
     });
   }, [windowWidth, setShowMobileMenu]);
 
+  function handleClick() {
+    setShowMobileMenu(false);
+  }
+
   return (
     <>
       <StyledHeader>
-        <h1>The planets</h1>
+        <Link to="/" onClick={handleClick}>
+          <h1>The planets</h1>
+        </Link>
         {windowWidth >= 768 ? (
           <div>Desktop Menu</div>
         ) : (
@@ -48,6 +55,27 @@ const StyledHeader = styled.header`
   align-items: center;
   color: var(--white);
   border-bottom: 1px solid hsla(240, 6%, 54%, 0.2);
+
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+
+    &:active {
+      color: var(--text-color);
+    }
+
+    &:active {
+      color: var(--text-color);
+    }
+
+    &:visited {
+      color: var(--text-color);
+    }
+
+    &:focus {
+      color: var(--text-color);
+    }
+  }
 
   h1 {
     text-transform: uppercase;

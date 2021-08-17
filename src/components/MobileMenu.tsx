@@ -27,41 +27,55 @@ export default function MobileMenu({ setShowMobileMenu }: IProps) {
             <MobileArrow />
           </li>
         </Link>
-        <li>
-          <StyledDot dotColor="#F7CC7F" />
-          Venus
-          <MobileArrow />
-        </li>
-        <li>
-          <StyledDot dotColor="#545BFE" />
-          Earth
-          <MobileArrow />
-        </li>
-        <li>
-          <StyledDot dotColor="#FF6A45" />
-          Mars
-          <MobileArrow />
-        </li>
-        <li>
-          <StyledDot dotColor="#ECAD7A" />
-          Jupiter
-          <MobileArrow />
-        </li>
-        <li>
-          <StyledDot dotColor="#FCCB6B" />
-          Saturn
-          <MobileArrow />
-        </li>
-        <li>
-          <StyledDot dotColor="#65F0D5" />
-          Uranus
-          <MobileArrow />
-        </li>
-        <li>
-          <StyledDot dotColor="#497EFA" />
-          Neptune
-          <MobileArrow />
-        </li>
+        <Link to="/venus" onClick={handleClick}>
+          <li>
+            <StyledDot dotColor="#F7CC7F" />
+            Venus
+            <MobileArrow />
+          </li>
+        </Link>
+        <Link to="/earth" onClick={handleClick}>
+          <li>
+            <StyledDot dotColor="#545BFE" />
+            Earth
+            <MobileArrow />
+          </li>
+        </Link>
+        <Link to="/mars" onClick={handleClick}>
+          <li>
+            <StyledDot dotColor="#FF6A45" />
+            Mars
+            <MobileArrow />
+          </li>
+        </Link>
+        <Link to="/jupiter" onClick={handleClick}>
+          <li>
+            <StyledDot dotColor="#ECAD7A" />
+            Jupiter
+            <MobileArrow />
+          </li>
+        </Link>
+        <Link to="/saturn" onClick={handleClick}>
+          <li>
+            <StyledDot dotColor="#FCCB6B" />
+            Saturn
+            <MobileArrow />
+          </li>
+        </Link>
+        <Link to="/uranus" onClick={handleClick}>
+          <li>
+            <StyledDot dotColor="#65F0D5" />
+            Uranus
+            <MobileArrow />
+          </li>
+        </Link>
+        <Link to="/neptune" onClick={handleClick}>
+          <li>
+            <StyledDot dotColor="#497EFA" />
+            Neptune
+            <MobileArrow />
+          </li>
+        </Link>
       </StyledUl>
     </StyledMobileNav>
   );
