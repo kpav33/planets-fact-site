@@ -20,7 +20,7 @@ export default function Header({ showMobileMenu, setShowMobileMenu }: IProps) {
       setWindowWidth(window.innerWidth);
       setShowMobileMenu(false);
     });
-  }, [windowWidth]);
+  }, [windowWidth, setShowMobileMenu]);
 
   return (
     <>
@@ -36,7 +36,7 @@ export default function Header({ showMobileMenu, setShowMobileMenu }: IProps) {
           />
         )}
       </StyledHeader>
-      {showMobileMenu && <MobileMenu />}
+      {showMobileMenu && <MobileMenu setShowMobileMenu={setShowMobileMenu} />}
     </>
   );
 }

@@ -1,20 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import { ReactComponent as MobileArrow } from "../assets/icon-chevron.svg";
-
+import { Link } from "react-router-dom";
 interface StyledProps {
   dotColor: string;
 }
 
-export default function MobileMenu() {
+// <Link to="/url-shortening-api-landing-page/features">Features</Link>
+
+interface IProps {
+  setShowMobileMenu: React.Dispatch<React.SetStateAction<any>>;
+}
+
+export default function MobileMenu({ setShowMobileMenu }: IProps) {
+  function handleClick() {
+    setShowMobileMenu(false);
+  }
+
   return (
     <StyledMobileNav>
       <StyledUl>
-        <li>
-          <StyledDot dotColor="#DEF4FC" />
-          Mercury
-          <MobileArrow />
-        </li>
+        <Link to="/mercury" onClick={handleClick}>
+          <li>
+            <StyledDot dotColor="#DEF4FC" />
+            Mercury
+            <MobileArrow />
+          </li>
+        </Link>
         <li>
           <StyledDot dotColor="#F7CC7F" />
           Venus
@@ -66,6 +78,10 @@ const StyledUl = styled.ul`
   list-style-type: none;
   padding-left: 0;
 
+  a {
+    text-decoration: none;
+  }
+
   li {
     font-size: 15px;
     text-transform: uppercase;
@@ -77,6 +93,23 @@ const StyledUl = styled.ul`
     padding-bottom: 20px;
     margin-top: 20px;
     border-bottom: 1px solid hsla(240, 6%, 54%, 0.1);
+    color: var(--text-color);
+
+    &:active {
+      color: var(--text-color);
+    }
+
+    &:active {
+      color: var(--text-color);
+    }
+
+    &:visited {
+      color: var(--text-color);
+    }
+
+    &:focus {
+      color: var(--text-color);
+    }
 
     svg {
       position: absolute;
