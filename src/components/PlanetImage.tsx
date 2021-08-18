@@ -17,7 +17,7 @@ export default function PlanetImage({ img, buttonValue }: IProps) {
   // console.log(img);
   // You need assests folder with images in public folder
   // buttonValue = "geology";
-  console.log(img);
+  // console.log(img);
   let getImg;
   let altText;
   switch (buttonValue) {

@@ -9,7 +9,7 @@ export default function MobilePlanetMenu({ setClickButtonValue }: IProps) {
   function handleClick(e: React.MouseEvent<HTMLLIElement, MouseEvent>) {
     let target = e.target as HTMLLIElement;
     // Add check to make sure object exists
-    console.log(target.textContent?.toLowerCase());
+    // console.log(target.textContent?.toLowerCase());
     setClickButtonValue(target.textContent?.toLowerCase());
   }
 

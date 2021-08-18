@@ -28,16 +28,34 @@ interface IProps {
       geology: string;
     };
   };
+  buttonValue: string | undefined;
 }
 
-export default function PlanetText({ data }: IProps) {
+export default function PlanetText({ data, buttonValue }: IProps) {
+  // console.log(buttonValue);
+  let textParaPath;
+  let textSourcePath;
+  switch (buttonValue) {
+    case "overview":
+      textParaPath = data.overview.content;
+      textSourcePath = data.overview.source;
+      break;
+    case "structure":
+      textParaPath = data.structure.content;
+      textSourcePath = data.structure.source;
+      break;
+    case "surface":
+      textParaPath = data.geology.content;
+      textSourcePath = data.geology.source;
+      break;
+  }
   return (
     <PlanetTextContainer>
       <h2>{data.name}</h2>
-      <p>{data.overview.content}</p>
+      <p>{textParaPath}</p>
       <PlanetTextSource>
         <span>Source: </span>
-        <a href={data.overview.source}>
+        <a href={textSourcePath}>
           Wikipedia
           <IconSource />
         </a>

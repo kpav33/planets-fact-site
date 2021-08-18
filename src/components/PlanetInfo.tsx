@@ -39,7 +39,7 @@ export default function PlanetInfo({ data, buttonValue }: IProps) {
   return (
     <PlanetInfoContainer>
       <PlanetImage img={data.images} buttonValue={buttonValue} />
-      <PlanetText data={data} />
+      <PlanetText data={data} buttonValue={buttonValue} />
       <PlanetStats data={data} />
     </PlanetInfoContainer>
   );
