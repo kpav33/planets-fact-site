@@ -9,9 +9,17 @@ import PlanetInfo from "./components/PlanetInfo";
 
 // const obj = JSON.parse(data);
 //console.log(data[0].planet);
+// Add try/catch to make sure data exists
+
+interface IState {
+  clickButtonValue: string | undefined;
+}
 
 function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const [clickButtonValue, setClickButtonValue] =
+    useState<IState["clickButtonValue"]>("overview");
 
   return (
     <div className="App">
@@ -19,45 +27,46 @@ function App() {
       <Header
         showMobileMenu={showMobileMenu}
         setShowMobileMenu={setShowMobileMenu}
+        setClickButtonValue={setClickButtonValue}
       />
       {!showMobileMenu && (
         <>
           <Switch>
             <Route exact path="/">
-              <MobilePlanetMenu />
-              <PlanetInfo data={data[0]} />
+              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <PlanetInfo data={data[0]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/mercury">
-              <MobilePlanetMenu />
-              <PlanetInfo data={data[0]} />
+              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <PlanetInfo data={data[0]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/venus">
-              <MobilePlanetMenu />
-              <PlanetInfo data={data[1]} />
+              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <PlanetInfo data={data[1]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/earth">
-              <MobilePlanetMenu />
-              <PlanetInfo data={data[2]} />
+              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <PlanetInfo data={data[2]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/mars">
-              <MobilePlanetMenu />
-              <PlanetInfo data={data[3]} />
+              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <PlanetInfo data={data[3]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/jupiter">
-              <MobilePlanetMenu />
-              <PlanetInfo data={data[4]} />
+              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <PlanetInfo data={data[4]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/saturn">
-              <MobilePlanetMenu />
-              <PlanetInfo data={data[5]} />
+              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <PlanetInfo data={data[5]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/uranus">
-              <MobilePlanetMenu />
-              <PlanetInfo data={data[6]} />
+              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <PlanetInfo data={data[6]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/neptune">
-              <MobilePlanetMenu />
-              <PlanetInfo data={data[7]} />
+              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <PlanetInfo data={data[7]} buttonValue={clickButtonValue} />
             </Route>
           </Switch>
         </>

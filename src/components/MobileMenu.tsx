@@ -10,11 +10,16 @@ interface StyledProps {
 
 interface IProps {
   setShowMobileMenu: React.Dispatch<React.SetStateAction<any>>;
+  setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
-export default function MobileMenu({ setShowMobileMenu }: IProps) {
+export default function MobileMenu({
+  setShowMobileMenu,
+  setClickButtonValue,
+}: IProps) {
   function handleClick() {
     setShowMobileMenu(false);
+    setClickButtonValue("overview");
   }
 
   return (

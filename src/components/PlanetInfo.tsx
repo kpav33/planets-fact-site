@@ -30,13 +30,15 @@ interface IProps {
       geology: string;
     };
   };
+  buttonValue: string | undefined;
 }
 
-export default function PlanetInfo({ data }: IProps) {
+export default function PlanetInfo({ data, buttonValue }: IProps) {
   // console.log(data[2].images.planet);
+  // console.log(buttonValue);
   return (
     <PlanetInfoContainer>
-      <PlanetImage img={data.images} />
+      <PlanetImage img={data.images} buttonValue={buttonValue} />
       <PlanetText data={data} />
       <PlanetStats data={data} />
     </PlanetInfoContainer>

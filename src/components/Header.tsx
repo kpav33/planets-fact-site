@@ -7,10 +7,15 @@ import MobileMenu from "./MobileMenu";
 
 interface IProps {
   showMobileMenu: boolean;
-  setShowMobileMenu: React.Dispatch<React.SetStateAction<any>>;
+  setShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
-export default function Header({ showMobileMenu, setShowMobileMenu }: IProps) {
+export default function Header({
+  showMobileMenu,
+  setShowMobileMenu,
+  setClickButtonValue,
+}: IProps) {
   // const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   // console.log(windowWidth);
@@ -25,6 +30,7 @@ export default function Header({ showMobileMenu, setShowMobileMenu }: IProps) {
 
   function handleClick() {
     setShowMobileMenu(false);
+    setClickButtonValue("overview");
   }
 
   return (
@@ -43,7 +49,12 @@ export default function Header({ showMobileMenu, setShowMobileMenu }: IProps) {
           />
         )}
       </StyledHeader>
-      {showMobileMenu && <MobileMenu setShowMobileMenu={setShowMobileMenu} />}
+      {showMobileMenu && (
+        <MobileMenu
+          setShowMobileMenu={setShowMobileMenu}
+          setClickButtonValue={setClickButtonValue}
+        />
+      )}
     </>
   );
 }

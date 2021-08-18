@@ -1,13 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function MobilePlanetMenu() {
+interface IProps {
+  setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
+}
+
+export default function MobilePlanetMenu({ setClickButtonValue }: IProps) {
+  function handleClick(e: React.MouseEvent<HTMLLIElement, MouseEvent>) {
+    let target = e.target as HTMLLIElement;
+    // Add check to make sure object exists
+    console.log(target.textContent?.toLowerCase());
+    setClickButtonValue(target.textContent?.toLowerCase());
+  }
+
   return (
     <StyledMobilePlanetMenuDiv>
       <ul>
-        <li>Overview</li>
-        <li>Structure</li>
-        <li>Surface</li>
+        <li onClick={handleClick}>Overview</li>
+        <li onClick={handleClick}>Structure</li>
+        <li onClick={handleClick}>Surface</li>
       </ul>
     </StyledMobilePlanetMenuDiv>
   );
@@ -32,6 +43,7 @@ const StyledMobilePlanetMenuDiv = styled.div`
       // In design files the font size is 9px
       font-size: 11px;
       letter-spacing: 1.93px;
+      cursor: pointer;
 
       &:hover {
         cursor: pointer;
