@@ -33,39 +33,66 @@ function App() {
         <>
           <Switch>
             <Route exact path="/">
-              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <MobilePlanetMenu
+                setClickButtonValue={setClickButtonValue}
+                style={data[0].styles}
+              />
               <PlanetInfo data={data[0]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/mercury">
-              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <MobilePlanetMenu
+                setClickButtonValue={setClickButtonValue}
+                style={data[0].styles}
+              />
               <PlanetInfo data={data[0]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/venus">
-              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <MobilePlanetMenu
+                setClickButtonValue={setClickButtonValue}
+                style={data[1].styles}
+              />
               <PlanetInfo data={data[1]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/earth">
-              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <MobilePlanetMenu
+                setClickButtonValue={setClickButtonValue}
+                style={data[2].styles}
+              />
               <PlanetInfo data={data[2]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/mars">
-              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <MobilePlanetMenu
+                setClickButtonValue={setClickButtonValue}
+                style={data[3].styles}
+              />
               <PlanetInfo data={data[3]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/jupiter">
-              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <MobilePlanetMenu
+                setClickButtonValue={setClickButtonValue}
+                style={data[4].styles}
+              />
               <PlanetInfo data={data[4]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/saturn">
-              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <MobilePlanetMenu
+                setClickButtonValue={setClickButtonValue}
+                style={data[5].styles}
+              />
               <PlanetInfo data={data[5]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/uranus">
-              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <MobilePlanetMenu
+                setClickButtonValue={setClickButtonValue}
+                style={data[6].styles}
+              />
               <PlanetInfo data={data[6]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/neptune">
-              <MobilePlanetMenu setClickButtonValue={setClickButtonValue} />
+              <MobilePlanetMenu
+                setClickButtonValue={setClickButtonValue}
+                style={data[7].styles}
+              />
               <PlanetInfo data={data[7]} buttonValue={clickButtonValue} />
             </Route>
           </Switch>

@@ -40,7 +40,7 @@ interface IProps {
 export default function PlanetInfo({ data, buttonValue }: IProps) {
   // console.log(data[2].images.planet);
   // console.log(buttonValue);
-  console.log(data.styles);
+  // console.log(data.styles);
   return (
     <PlanetInfoContainer>
       <PlanetImage

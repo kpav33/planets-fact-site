@@ -3,9 +3,20 @@ import styled from "styled-components";
 
 interface IProps {
   setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
+  style: {
+    maxWidth: string;
+    borderColor: string;
+  };
 }
 
-export default function MobilePlanetMenu({ setClickButtonValue }: IProps) {
+interface StyledProps {
+  borderColor: string;
+}
+
+export default function MobilePlanetMenu({
+  setClickButtonValue,
+  style,
+}: IProps) {
   function handleClick(e: React.MouseEvent<HTMLLIElement, MouseEvent>) {
     let target = e.target as HTMLLIElement;
     // Add check to make sure object exists
@@ -13,8 +24,10 @@ export default function MobilePlanetMenu({ setClickButtonValue }: IProps) {
     setClickButtonValue(target.textContent?.toLowerCase());
   }
 
+  // console.log(style);
+
   return (
-    <StyledMobilePlanetMenuDiv>
+    <StyledMobilePlanetMenuDiv borderColor={style.borderColor}>
       <ul>
         <li onClick={handleClick}>Overview</li>
         <li onClick={handleClick}>Structure</li>
@@ -24,7 +37,7 @@ export default function MobilePlanetMenu({ setClickButtonValue }: IProps) {
   );
 }
 
-const StyledMobilePlanetMenuDiv = styled.div`
+const StyledMobilePlanetMenuDiv = styled.div<StyledProps>`
   padding-top: 10px;
   ul {
     list-style: none;
@@ -47,7 +60,7 @@ const StyledMobilePlanetMenuDiv = styled.div`
 
       &:hover {
         cursor: pointer;
-        border-bottom: 4px solid var(--purple);
+        border-bottom: 4px solid ${(props) => props.borderColor};
         padding-bottom: 30px;
         color: var(--white);
       }
