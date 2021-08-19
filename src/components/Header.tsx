@@ -40,7 +40,18 @@ export default function Header({
           <h1>The planets</h1>
         </Link>
         {windowWidth >= 768 ? (
-          <div>Desktop Menu</div>
+          <StyledDesktopNav>
+            <StyledDesktopUl>
+              <li>Mercury</li>
+              <li>Venus</li>
+              <li>Earth</li>
+              <li>Mars</li>
+              <li>Jupiter</li>
+              <li>Saturn</li>
+              <li>Uranus</li>
+              <li>Neptun</li>
+            </StyledDesktopUl>
+          </StyledDesktopNav>
         ) : (
           <GiHamburgerMenu
             size="24px"
@@ -66,6 +77,10 @@ const StyledHeader = styled.header`
   align-items: center;
   color: var(--white);
   border-bottom: 1px solid hsla(240, 6%, 54%, 0.2);
+
+  @media only screen and (min-width: 900px) {
+    padding: 0;
+  }
 
   a {
     text-decoration: none;
@@ -94,6 +109,10 @@ const StyledHeader = styled.header`
     font-size: 28px;
     margin: 0;
     padding: 0;
+
+    @media only screen and (min-width: 900px) {
+      margin: 22px 0px 22px 32px;
+    }
   }
 
   svg {
@@ -102,3 +121,46 @@ const StyledHeader = styled.header`
     }
   }
 `;
+
+const StyledDesktopNav = styled.nav`
+  margin: 0;
+  margin-right: 40px;
+  padding: 0;
+  // width: 100%;
+  height: 85px;
+`;
+
+const StyledDesktopUl = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+  width: 665px;
+  display: flex;
+  justify-content: space-between;
+  // align-items: flex-end;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+  color: hsl(0, 0%, 100%, 0.75);
+  // padding-top: 10px;
+  margin: 0;
+  margin-top: 35px;
+
+  li {
+    cursor: pointer;
+    line-height: 25px;
+    letter-spacing: 1px;
+    height: 34px;
+    display: flex;
+    align-items: flex-start;
+
+    &:hover {
+      color: var(--text-color);
+      padding-bottom: 45px;
+      border-bottom: 4px solid red;
+    }
+  }
+`;
+
+/* @media only screen and (min-width: 1440px) {
+  
+}*/
