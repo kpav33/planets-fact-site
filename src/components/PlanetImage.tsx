@@ -9,15 +9,20 @@ interface IProps {
     geology: string;
   };
   buttonValue: string | undefined;
+  style: {
+    maxWidth: string;
+    borderColor: string;
+  };
 }
 
-export default function PlanetImage({ img, buttonValue }: IProps) {
+export default function PlanetImage({ img, buttonValue, style }: IProps) {
   //console.log(`.${img.planet}`);
   //console.log(image);
   // console.log(img);
   // You need assests folder with images in public folder
   // buttonValue = "geology";
   // console.log(img);
+  console.log(style);
   let getImg;
   let altText;
   switch (buttonValue) {
@@ -41,18 +46,19 @@ export default function PlanetImage({ img, buttonValue }: IProps) {
   // ./assets/planet-mercury.svg
   return (
     <PlanetImageContainer>
-      <img alt={altText} src={getImg} />
+      <img alt={altText} src={getImg} style={{ maxWidth: style.maxWidth }} />
       {buttonValue === "surface" && beforeImg}
     </PlanetImageContainer>
   );
 }
 
 const PlanetImageContainer = styled.div`
-  padding: 67px 0;
+  // padding: 67px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  height: 220px;
 
   p {
     margin: 0;
@@ -64,7 +70,8 @@ const PlanetImageContainer = styled.div`
 
   img {
     // Need to dinamically change this to make sure the planet images are of different sizes
-    max-width: 70%;
+    // Instead of using styled-components theme switcher your could just create an additional "style" object in data.json for each planet and add the necessary styles there (max-width and color for each planet)
+    // max-width: 70%;
   }
 `;
 

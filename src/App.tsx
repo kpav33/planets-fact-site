@@ -8,7 +8,7 @@ import MobilePlanetMenu from "./components/MobilePlanetMenu";
 import PlanetInfo from "./components/PlanetInfo";
 
 // const obj = JSON.parse(data);
-//console.log(data[0].planet);
+// console.log(data[0].styles);
 // Add try/catch to make sure data exists
 
 interface IState {

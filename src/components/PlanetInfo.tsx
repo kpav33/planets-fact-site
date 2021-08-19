@@ -29,6 +29,10 @@ interface IProps {
       internal: string;
       geology: string;
     };
+    styles: {
+      maxWidth: string;
+      borderColor: string;
+    };
   };
   buttonValue: string | undefined;
 }
@@ -36,9 +40,14 @@ interface IProps {
 export default function PlanetInfo({ data, buttonValue }: IProps) {
   // console.log(data[2].images.planet);
   // console.log(buttonValue);
+  console.log(data.styles);
   return (
     <PlanetInfoContainer>
-      <PlanetImage img={data.images} buttonValue={buttonValue} />
+      <PlanetImage
+        img={data.images}
+        buttonValue={buttonValue}
+        style={data.styles}
+      />
       <PlanetText data={data} buttonValue={buttonValue} />
       <PlanetStats data={data} />
     </PlanetInfoContainer>
