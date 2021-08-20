@@ -39,7 +39,7 @@ export default function PlanetImage({ img, buttonValue, style }: IProps) {
       altText = "geology";
       break;
   }
-  let beforeImg = <SurfaceImgDiv src={`${img.geology}`} />;
+  let surfaceImg = <SurfaceImgDiv src={`${img.geology}`} />;
   // let getImg = `${img.planet}`;SurfaceImgDiv
   // console.log(getImg);
 
@@ -47,7 +47,7 @@ export default function PlanetImage({ img, buttonValue, style }: IProps) {
   return (
     <PlanetImageContainer>
       <img alt={altText} src={getImg} style={{ maxWidth: style.maxWidth }} />
-      {buttonValue === "surface" && beforeImg}
+      {buttonValue === "surface" && surfaceImg}
     </PlanetImageContainer>
   );
 }
@@ -78,10 +78,15 @@ const PlanetImageContainer = styled.div`
 const SurfaceImgDiv = styled.img`
   // color: red;
   // background: url("./assets/geology-mercury.png");
-  height: 163px;
-  width: 200px;
+  height: 133px;
+  width: 170px;
   position: absolute;
   object-fit: contain;
   // Adjust this for desktop and tablet
   top: 50%;
+
+  @media only screen and (min-width: 900px) {
+    height: 163px;
+    width: 200px;
+  }
 `;

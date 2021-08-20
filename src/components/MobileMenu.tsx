@@ -132,7 +132,7 @@ const StyledUl = styled.ul`
 
     svg {
       position: absolute;
-      left: 295px;
+      left: 96%;
     }
   }
 `;
@@ -145,6 +145,6 @@ const StyledDot = styled.span<StyledProps>`
   display: inline-block;
   //margin-right: 25px;
   position: absolute;
-  right: 285px;
+  right: 93%;
   top: -3px;
 `;
