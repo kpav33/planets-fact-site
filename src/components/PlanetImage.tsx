@@ -65,6 +65,7 @@ const PlanetImageContainer = styled.div`
     grid-row: 1 / 3;
     grid-column: 1 / 3;
     align-self: center;
+    margin-top: 100px;
   }
 
   p {

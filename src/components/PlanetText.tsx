@@ -70,19 +70,34 @@ const PlanetTextContainer = styled.div`
   @media only screen and (min-width: 900px) {
     // to do
     grid-row: 1 / 3;
-    grid-column: 3;
-    align-self: center;
+    grid-column: 4;
+    //align-self: center;
+    text-align: left;
+    padding-top: 46px;
   }
 
   h2 {
     font-family: var(--font-antonio);
     text-transform: uppercase;
     font-size: 40px;
+
+    @media only screen and (min-width: 900px) {
+      // to do
+      font-size: 80px;
+      //line-height: 104px;
+      margin-bottom: 23px;
+    }
   }
 
   p {
     font-size: 11px;
     line-height: 22px;
+
+    @media only screen and (min-width: 900px) {
+      // to do
+      font-size: 14px;
+      line-height: 25px;
+    }
   }
 `;
 
@@ -96,6 +111,13 @@ const PlanetTextSource = styled.div`
   font-size: 12px;
   line-height: 25px;
 
+  @media only screen and (min-width: 900px) {
+    font-size: 14px;
+    margin: 0;
+    width: 164px;
+    margin: 35px 0px 39px 0px;
+  }
+
   a {
     color: var(--light-gray);
     font-weight: 700;
@@ -103,5 +125,9 @@ const PlanetTextSource = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and (min-width: 900px) {
+      width: 100px;
+    }
   }
 `;

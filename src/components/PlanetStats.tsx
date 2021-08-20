@@ -61,11 +61,11 @@ const PlanetStatsContainer = styled.div`
     // to do
     grid-gap: 30px;
     grid-row: 3;
-    grid-column: 1 / 4;
+    grid-column: 1 / 5;
     // align-self: center;
     grid-template: 128px / repeat(4, 1fr);
     align-self: center;
-    padding: 0px 165px;
+    // padding: 0px 165px;
   }
 `;
 
