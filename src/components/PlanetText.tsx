@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { ReactComponent as IconSource } from "../assets/icon-source.svg";
+import DesktopPlanetMenu from "./DesktopPlanetMenu";
 
 interface IProps {
   data: {
@@ -27,12 +28,20 @@ interface IProps {
       internal: string;
       geology: string;
     };
+    styles: {
+      maxWidth: string;
+      borderColor: string;
+    };
   };
   buttonValue: string | undefined;
+  setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
-export default function PlanetText({ data, buttonValue }: IProps) {
-  // console.log(buttonValue);
+export default function PlanetText({
+  data,
+  buttonValue,
+  setClickButtonValue,
+}: IProps) {
   let textParaPath;
   let textSourcePath;
   switch (buttonValue) {
@@ -60,6 +69,14 @@ export default function PlanetText({ data, buttonValue }: IProps) {
           <IconSource />
         </a>
       </PlanetTextSource>
+      {/* <MobilePlanetMenu
+        style={{ maxWidth: "ok", borderColor: "ok" }}
+        setClickButtonValue={setClickButtonValue}
+      /> */}
+      <DesktopPlanetMenu
+        style={data.styles}
+        setClickButtonValue={setClickButtonValue}
+      />
     </PlanetTextContainer>
   );
 }
@@ -85,7 +102,7 @@ const PlanetTextContainer = styled.div`
       // to do
       font-size: 80px;
       //line-height: 104px;
-      margin-bottom: 23px;
+      margin: 30px 0px 23px 0px;
     }
   }
 
@@ -97,6 +114,7 @@ const PlanetTextContainer = styled.div`
       // to do
       font-size: 14px;
       line-height: 25px;
+      height: 150px;
     }
   }
 `;

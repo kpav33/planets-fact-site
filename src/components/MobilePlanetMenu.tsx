@@ -48,6 +48,14 @@ const StyledMobilePlanetMenuDiv = styled.div<StyledProps>`
     height: 34px;
     border-bottom: 1px solid hsla(240, 6%, 54%, 0.2);
 
+    /* @media only screen and (min-width: 900px) {
+      // to do
+      flex-direction: column;
+      align-items: center;
+      height: 176px;
+      border-bottom: none;
+    } */
+
     li {
       text-transform: uppercase;
       //font-family: var(--font-spartan);
@@ -58,11 +66,24 @@ const StyledMobilePlanetMenuDiv = styled.div<StyledProps>`
       letter-spacing: 1.93px;
       cursor: pointer;
 
+      /* @media only screen and (min-width: 900px) {
+        // to do
+        color: var(--text-color);
+        font-size: 12px;
+        letter-spacing: 2.6px;
+      } */
+
       &:hover {
         cursor: pointer;
         border-bottom: 4px solid ${(props) => props.borderColor};
         padding-bottom: 30px;
         color: var(--white);
+
+        /* @media only screen and (min-width: 900px) {
+          // to do
+          border-bottom: none;
+          padding-bottom: none;
+        } */
       }
 
       &:active {
