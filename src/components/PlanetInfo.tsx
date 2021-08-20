@@ -56,4 +56,11 @@ export default function PlanetInfo({ data, buttonValue }: IProps) {
 
 const PlanetInfoContainer = styled.div`
   padding: 24px;
+
+  @media only screen and (min-width: 900px) {
+    // to do
+    height: 938px;
+    display: grid;
+    grid-template: repeat(3, 300px) / repeat(3, 1fr);
+  }
 `;

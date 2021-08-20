@@ -67,6 +67,13 @@ export default function PlanetText({ data, buttonValue }: IProps) {
 const PlanetTextContainer = styled.div`
   text-align: center;
 
+  @media only screen and (min-width: 900px) {
+    // to do
+    grid-row: 1 / 3;
+    grid-column: 3;
+    align-self: center;
+  }
+
   h2 {
     font-family: var(--font-antonio);
     text-transform: uppercase;

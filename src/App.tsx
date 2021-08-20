@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GlobalStyles } from "./GlobalStyle.style";
 import data from "./data.json";
 import { Switch, Route } from "react-router-dom";
@@ -10,6 +10,7 @@ import PlanetInfo from "./components/PlanetInfo";
 // const obj = JSON.parse(data);
 // console.log(data[0].styles);
 // Add try/catch to make sure data exists
+// console.log(window.innerWidth);
 
 interface IState {
   clickButtonValue: string | undefined;
@@ -20,6 +21,14 @@ function App() {
 
   const [clickButtonValue, setClickButtonValue] =
     useState<IState["clickButtonValue"]>("overview");
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+  }, [width]);
+
+  // 400px
 
   return (
     <div className="App">
@@ -33,66 +42,84 @@ function App() {
         <>
           <Switch>
             <Route exact path="/">
-              <MobilePlanetMenu
-                setClickButtonValue={setClickButtonValue}
-                style={data[0].styles}
-              />
+              {width < 400 && (
+                <MobilePlanetMenu
+                  setClickButtonValue={setClickButtonValue}
+                  style={data[0].styles}
+                />
+              )}
               <PlanetInfo data={data[0]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/mercury">
-              <MobilePlanetMenu
-                setClickButtonValue={setClickButtonValue}
-                style={data[0].styles}
-              />
+              {width < 400 && (
+                <MobilePlanetMenu
+                  setClickButtonValue={setClickButtonValue}
+                  style={data[0].styles}
+                />
+              )}
               <PlanetInfo data={data[0]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/venus">
-              <MobilePlanetMenu
-                setClickButtonValue={setClickButtonValue}
-                style={data[1].styles}
-              />
+              {width < 400 && (
+                <MobilePlanetMenu
+                  setClickButtonValue={setClickButtonValue}
+                  style={data[1].styles}
+                />
+              )}
               <PlanetInfo data={data[1]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/earth">
-              <MobilePlanetMenu
-                setClickButtonValue={setClickButtonValue}
-                style={data[2].styles}
-              />
+              {width < 400 && (
+                <MobilePlanetMenu
+                  setClickButtonValue={setClickButtonValue}
+                  style={data[2].styles}
+                />
+              )}
               <PlanetInfo data={data[2]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/mars">
-              <MobilePlanetMenu
-                setClickButtonValue={setClickButtonValue}
-                style={data[3].styles}
-              />
+              {width < 400 && (
+                <MobilePlanetMenu
+                  setClickButtonValue={setClickButtonValue}
+                  style={data[3].styles}
+                />
+              )}
               <PlanetInfo data={data[3]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/jupiter">
-              <MobilePlanetMenu
-                setClickButtonValue={setClickButtonValue}
-                style={data[4].styles}
-              />
+              {width < 400 && (
+                <MobilePlanetMenu
+                  setClickButtonValue={setClickButtonValue}
+                  style={data[4].styles}
+                />
+              )}
               <PlanetInfo data={data[4]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/saturn">
-              <MobilePlanetMenu
-                setClickButtonValue={setClickButtonValue}
-                style={data[5].styles}
-              />
+              {width < 400 && (
+                <MobilePlanetMenu
+                  setClickButtonValue={setClickButtonValue}
+                  style={data[5].styles}
+                />
+              )}
               <PlanetInfo data={data[5]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/uranus">
-              <MobilePlanetMenu
-                setClickButtonValue={setClickButtonValue}
-                style={data[6].styles}
-              />
+              {width < 400 && (
+                <MobilePlanetMenu
+                  setClickButtonValue={setClickButtonValue}
+                  style={data[6].styles}
+                />
+              )}
               <PlanetInfo data={data[6]} buttonValue={clickButtonValue} />
             </Route>
             <Route exact path="/neptune">
-              <MobilePlanetMenu
-                setClickButtonValue={setClickButtonValue}
-                style={data[7].styles}
-              />
+              {width < 400 && (
+                <MobilePlanetMenu
+                  setClickButtonValue={setClickButtonValue}
+                  style={data[7].styles}
+                />
+              )}
               <PlanetInfo data={data[7]} buttonValue={clickButtonValue} />
             </Route>
           </Switch>

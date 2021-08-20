@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { menuBorderColors } from "../GlobalStyle.style";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
@@ -11,15 +12,16 @@ interface IProps {
   setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
+interface IStyledProps {
+  borderColor: string;
+}
+
 export default function Header({
   showMobileMenu,
   setShowMobileMenu,
   setClickButtonValue,
 }: IProps) {
-  // const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  // console.log(windowWidth);
-  // console.log(showMobileMenu);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -42,14 +44,49 @@ export default function Header({
         {windowWidth >= 768 ? (
           <StyledDesktopNav>
             <StyledDesktopUl>
-              <li>Mercury</li>
-              <li>Venus</li>
-              <li>Earth</li>
-              <li>Mars</li>
-              <li>Jupiter</li>
-              <li>Saturn</li>
-              <li>Uranus</li>
-              <li>Neptun</li>
+              <StyledLinkWrapper borderColor={menuBorderColors.borderMercury}>
+                <Link to="/mercury">
+                  <li>Mercury</li>
+                </Link>
+              </StyledLinkWrapper>
+              <StyledLinkWrapper borderColor={menuBorderColors.borderVenus}>
+                <Link to="/venus">
+                  <li>Venus</li>
+                </Link>
+              </StyledLinkWrapper>
+              <StyledLinkWrapper borderColor={menuBorderColors.borderEarth}>
+                <Link to="/earth">
+                  <li>Earth</li>
+                </Link>
+              </StyledLinkWrapper>
+              <StyledLinkWrapper borderColor={menuBorderColors.borderMars}>
+                <Link to="/mars">
+                  <li>Mars</li>
+                </Link>
+              </StyledLinkWrapper>
+              <StyledLinkWrapper borderColor={menuBorderColors.borderJupiter}>
+                {" "}
+                <Link to="/jupiter">
+                  <li>Jupiter</li>
+                </Link>
+              </StyledLinkWrapper>
+              <StyledLinkWrapper borderColor={menuBorderColors.borderSaturn}>
+                {" "}
+                <Link to="/saturn">
+                  <li>Saturn</li>
+                </Link>
+              </StyledLinkWrapper>
+              <StyledLinkWrapper borderColor={menuBorderColors.borderUranus}>
+                {" "}
+                <Link to="/uranus">
+                  <li>Uranus</li>
+                </Link>
+              </StyledLinkWrapper>
+              <StyledLinkWrapper borderColor={menuBorderColors.borderNeptune}>
+                <Link to="/neptune">
+                  <li>Neptune</li>
+                </Link>
+              </StyledLinkWrapper>
             </StyledDesktopUl>
           </StyledDesktopNav>
         ) : (
@@ -82,22 +119,12 @@ const StyledHeader = styled.header`
     padding: 0;
   }
 
-  a {
+  & > a {
     text-decoration: none;
     color: var(--text-color);
 
-    &:active {
-      color: var(--text-color);
-    }
-
-    &:active {
-      color: var(--text-color);
-    }
-
-    &:visited {
-      color: var(--text-color);
-    }
-
+    &:active,
+    &:visited,
     &:focus {
       color: var(--text-color);
     }
@@ -144,6 +171,22 @@ const StyledDesktopUl = styled.ul`
   // padding-top: 10px;
   margin: 0;
   margin-top: 35px;
+`;
+
+const StyledLinkWrapper = styled.div<IStyledProps>`
+  a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%, 0.75);
+    height: 34px;
+    display: inline-block;
+
+    &:active,
+    &:focus {
+      color: var(--text-color);
+      border-bottom: 4px solid ${(props) => props.borderColor};
+      padding-bottom: 45px;
+    }
+  }
 
   li {
     cursor: pointer;
@@ -156,7 +199,7 @@ const StyledDesktopUl = styled.ul`
     &:hover {
       color: var(--text-color);
       padding-bottom: 45px;
-      border-bottom: 4px solid red;
+      border-bottom: 4px solid ${(props) => props.borderColor};
     }
   }
 `;

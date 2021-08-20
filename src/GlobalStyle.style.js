@@ -51,3 +51,14 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 `;
+
+export const menuBorderColors = {
+  borderMercury: "var(--blue)",
+  borderVenus: "var(--yellow)",
+  borderEarth: "var(--purple)",
+  borderMars: "var(--dark-red)",
+  borderJupiter: "var(--red)",
+  borderSaturn: "var(--orange)",
+  borderUranus: "var(--light-green)",
+  borderNeptune: "var(--bright-blue)",
+};

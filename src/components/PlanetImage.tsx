@@ -60,6 +60,13 @@ const PlanetImageContainer = styled.div`
   position: relative;
   height: 220px;
 
+  @media only screen and (min-width: 900px) {
+    // to do
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+    align-self: center;
+  }
+
   p {
     margin: 0;
     display: flex;

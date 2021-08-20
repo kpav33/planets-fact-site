@@ -56,6 +56,17 @@ const PlanetStatsContainer = styled.div`
   display: grid;
   grid-template: auto / auto;
   grid-gap: 8px;
+
+  @media only screen and (min-width: 900px) {
+    // to do
+    grid-gap: 30px;
+    grid-row: 3;
+    grid-column: 1 / 4;
+    // align-self: center;
+    grid-template: 128px / repeat(4, 1fr);
+    align-self: center;
+    padding: 0px 165px;
+  }
 `;
 
 const PlanetStatDiv = styled.div`
@@ -69,10 +80,28 @@ const PlanetStatDiv = styled.div`
   padding: 9px 24px 13px 24px;
   border: 1px solid hsla(240, 6%, 54%, 0.2);
 
+  @media only screen and (min-width: 900px) {
+    // to do
+    //justify-content: center;
+    //align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 25px;
+  }
+
   span {
     color: var(--text-color);
     font-family: var(--font-antonio);
     font-weight: 400;
     font-size: 20px;
+
+    @media only screen and (min-width: 900px) {
+      font-size: 40px;
+      line-height: 52px;
+      letter-spacing: -1.5px;
+    }
   }
 `;
