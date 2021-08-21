@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 interface IProps {
+  buttonValue: string | undefined;
   setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
   style: {
     maxWidth: string;
@@ -14,6 +15,7 @@ interface IStyledProps {
 }
 
 export default function DesktopPlanetMenu({
+  buttonValue,
   setClickButtonValue,
   style,
 }: IProps) {
@@ -25,18 +27,22 @@ export default function DesktopPlanetMenu({
     setClickButtonValue(target.textContent?.toLowerCase().slice(3));
   }
 
-  // Make overview button focused by default!!!
+  function defaultStyles(selection: string) {
+    return buttonValue === selection
+      ? { background: style.borderColor }
+      : undefined;
+  }
 
   return (
     <StyledDesktopPlanetMenuDiv backgroundColor={style.borderColor}>
       <div>
-        <button onClick={handleClick}>
+        <button onClick={handleClick} style={defaultStyles("overview")}>
           <span>01</span> Overview
         </button>
-        <button onClick={handleClick}>
+        <button onClick={handleClick} style={defaultStyles("structure")}>
           <span>02</span> Structure
         </button>
-        <button onClick={handleClick}>
+        <button onClick={handleClick} style={defaultStyles("surface")}>
           <span>03</span> Surface
         </button>
       </div>
@@ -78,11 +84,6 @@ const StyledDesktopPlanetMenuDiv = styled.div<IStyledProps>`
     &:focus {
       background: ${(props) => props.backgroundColor};
     }
-  }
-
-  a:active,
-  a:focus {
-    background: red;
   }
 
   span {

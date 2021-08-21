@@ -45,45 +45,45 @@ export default function Header({
           <StyledDesktopNav>
             <StyledDesktopUl>
               <StyledLinkWrapper borderColor={menuBorderColors.borderMercury}>
-                <Link to="/mercury">
+                <Link to="/mercury" onClick={handleClick}>
                   <li>Mercury</li>
                 </Link>
               </StyledLinkWrapper>
               <StyledLinkWrapper borderColor={menuBorderColors.borderVenus}>
-                <Link to="/venus">
+                <Link to="/venus" onClick={handleClick}>
                   <li>Venus</li>
                 </Link>
               </StyledLinkWrapper>
               <StyledLinkWrapper borderColor={menuBorderColors.borderEarth}>
-                <Link to="/earth">
+                <Link to="/earth" onClick={handleClick}>
                   <li>Earth</li>
                 </Link>
               </StyledLinkWrapper>
               <StyledLinkWrapper borderColor={menuBorderColors.borderMars}>
-                <Link to="/mars">
+                <Link to="/mars" onClick={handleClick}>
                   <li>Mars</li>
                 </Link>
               </StyledLinkWrapper>
               <StyledLinkWrapper borderColor={menuBorderColors.borderJupiter}>
                 {" "}
-                <Link to="/jupiter">
+                <Link to="/jupiter" onClick={handleClick}>
                   <li>Jupiter</li>
                 </Link>
               </StyledLinkWrapper>
               <StyledLinkWrapper borderColor={menuBorderColors.borderSaturn}>
                 {" "}
-                <Link to="/saturn">
+                <Link to="/saturn" onClick={handleClick}>
                   <li>Saturn</li>
                 </Link>
               </StyledLinkWrapper>
               <StyledLinkWrapper borderColor={menuBorderColors.borderUranus}>
                 {" "}
-                <Link to="/uranus">
+                <Link to="/uranus" onClick={handleClick}>
                   <li>Uranus</li>
                 </Link>
               </StyledLinkWrapper>
               <StyledLinkWrapper borderColor={menuBorderColors.borderNeptune}>
-                <Link to="/neptune">
+                <Link to="/neptune" onClick={handleClick}>
                   <li>Neptune</li>
                 </Link>
               </StyledLinkWrapper>

@@ -35,12 +35,14 @@ interface IProps {
   };
   buttonValue: string | undefined;
   setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
+  width: number;
 }
 
 export default function PlanetText({
   data,
   buttonValue,
   setClickButtonValue,
+  width,
 }: IProps) {
   let textParaPath;
   let textSourcePath;
@@ -73,10 +75,13 @@ export default function PlanetText({
         style={{ maxWidth: "ok", borderColor: "ok" }}
         setClickButtonValue={setClickButtonValue}
       /> */}
-      <DesktopPlanetMenu
-        style={data.styles}
-        setClickButtonValue={setClickButtonValue}
-      />
+      {width > 900 && (
+        <DesktopPlanetMenu
+          style={data.styles}
+          buttonValue={buttonValue}
+          setClickButtonValue={setClickButtonValue}
+        />
+      )}
     </PlanetTextContainer>
   );
 }

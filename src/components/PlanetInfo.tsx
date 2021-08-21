@@ -36,12 +36,14 @@ interface IProps {
   };
   buttonValue: string | undefined;
   setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
+  width: number;
 }
 
 export default function PlanetInfo({
   data,
   buttonValue,
   setClickButtonValue,
+  width,
 }: IProps) {
   // console.log(data[2].images.planet);
   // console.log(buttonValue);
@@ -57,6 +59,7 @@ export default function PlanetInfo({
         data={data}
         buttonValue={buttonValue}
         setClickButtonValue={setClickButtonValue}
+        width={width}
       />
       <PlanetStats data={data} />
     </PlanetInfoContainer>

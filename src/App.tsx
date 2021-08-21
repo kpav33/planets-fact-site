@@ -52,6 +52,7 @@ function App() {
                 data={data[0]}
                 buttonValue={clickButtonValue}
                 setClickButtonValue={setClickButtonValue}
+                width={width}
               />
             </Route>
             <Route exact path="/mercury">
@@ -65,6 +66,7 @@ function App() {
                 data={data[0]}
                 buttonValue={clickButtonValue}
                 setClickButtonValue={setClickButtonValue}
+                width={width}
               />
             </Route>
             <Route exact path="/venus">
@@ -78,6 +80,7 @@ function App() {
                 data={data[1]}
                 buttonValue={clickButtonValue}
                 setClickButtonValue={setClickButtonValue}
+                width={width}
               />
             </Route>
             <Route exact path="/earth">
@@ -91,6 +94,7 @@ function App() {
                 data={data[2]}
                 buttonValue={clickButtonValue}
                 setClickButtonValue={setClickButtonValue}
+                width={width}
               />
             </Route>
             <Route exact path="/mars">
@@ -104,6 +108,7 @@ function App() {
                 data={data[3]}
                 buttonValue={clickButtonValue}
                 setClickButtonValue={setClickButtonValue}
+                width={width}
               />
             </Route>
             <Route exact path="/jupiter">
@@ -117,6 +122,7 @@ function App() {
                 data={data[4]}
                 buttonValue={clickButtonValue}
                 setClickButtonValue={setClickButtonValue}
+                width={width}
               />
             </Route>
             <Route exact path="/saturn">
@@ -130,6 +136,7 @@ function App() {
                 data={data[5]}
                 buttonValue={clickButtonValue}
                 setClickButtonValue={setClickButtonValue}
+                width={width}
               />
             </Route>
             <Route exact path="/uranus">
@@ -143,6 +150,7 @@ function App() {
                 data={data[6]}
                 buttonValue={clickButtonValue}
                 setClickButtonValue={setClickButtonValue}
+                width={width}
               />
             </Route>
             <Route exact path="/neptune">
@@ -156,6 +164,7 @@ function App() {
                 data={data[7]}
                 buttonValue={clickButtonValue}
                 setClickButtonValue={setClickButtonValue}
+                width={width}
               />
             </Route>
           </Switch>

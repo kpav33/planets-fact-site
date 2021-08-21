@@ -94,6 +94,11 @@ const SurfaceImgDiv = styled.img`
   top: 50%;
 
   @media only screen and (min-width: 900px) {
+    // to do
+    top: 100%;
+  }
+
+  @media only screen and (min-width: 900px) {
     height: 163px;
     width: 200px;
   }
