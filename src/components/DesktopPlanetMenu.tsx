@@ -63,6 +63,14 @@ const StyledDesktopPlanetMenuDiv = styled.div<IStyledProps>`
     text-transform: uppercase;
     letter-spacing: 2.6px;
     font-weight: 700;
+
+    @media only screen and (max-width: 768px) and (min-width: 400px) {
+      height: 150px;
+      font-size: 9px;
+      letter-spacing: 1.9px;
+      width: 250px;
+      margin-top: 20px;
+    }
   }
 
   button {
@@ -78,6 +86,12 @@ const StyledDesktopPlanetMenuDiv = styled.div<IStyledProps>`
     text-transform: uppercase;
     text-align: left;
     padding: 6px 0px 0px 25px;
+
+    @media only screen and (max-width: 768px) and (min-width: 400px) {
+      font-size: 9px;
+      letter-spacing: 1.9px;
+      padding: 3px 0px 0px 25px;
+    }
 
     &:hover,
     &:active,

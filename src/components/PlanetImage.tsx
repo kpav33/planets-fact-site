@@ -60,6 +60,12 @@ const PlanetImageContainer = styled.div`
   position: relative;
   height: 220px;
 
+  @media only screen and (max-width: 768px) and (min-width: 400px) {
+    grid-row: 1;
+    grid-column: 1 / 3;
+    align-self: center;
+  }
+
   @media only screen and (min-width: 900px) {
     // to do
     grid-row: 1 / 3;
@@ -80,6 +86,10 @@ const PlanetImageContainer = styled.div`
     // Need to dinamically change this to make sure the planet images are of different sizes
     // Instead of using styled-components theme switcher your could just create an additional "style" object in data.json for each planet and add the necessary styles there (max-width and color for each planet)
     // max-width: 70%;
+
+    @media only screen and (max-width: 768px) and (min-width: 400px) {
+      max-width: 400px !important;
+    }
   }
 `;
 
@@ -93,13 +103,22 @@ const SurfaceImgDiv = styled.img`
   // Adjust this for desktop and tablet
   top: 50%;
 
-  @media only screen and (min-width: 900px) {
+  @media only screen and (max-width: 768px) and (min-width: 400px) {
     // to do
-    top: 100%;
-  }
-
-  @media only screen and (min-width: 900px) {
+    top: 80%;
     height: 163px;
     width: 200px;
   }
+
+  @media only screen and (min-width: 900px) {
+    // to do
+    top: 100%;
+    height: 163px;
+    width: 200px;
+  }
+
+  /* @media only screen and (min-width: 900px) {
+    height: 163px;
+    width: 200px;
+  } */
 `;

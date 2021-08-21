@@ -74,6 +74,12 @@ const PlanetInfoContainer = styled.div`
     height: 938px;
     display: grid;
     grid-template: repeat(3, 300px) / repeat(2, 1fr) 50px 350px;
-    padding: 24px 165px;
+    padding: 24px 165px 0px 165px;
+  }
+
+  @media only screen and (max-width: 768px) and (min-width: 400px) {
+    display: grid;
+    grid-template: 460px 250px 100px / repeat(2, 1fr);
+    padding: 0px 40px;
   }
 `;

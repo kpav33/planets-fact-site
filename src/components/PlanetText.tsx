@@ -62,20 +62,22 @@ export default function PlanetText({
   }
   return (
     <PlanetTextContainer>
-      <h2>{data.name}</h2>
-      <p>{textParaPath}</p>
-      <PlanetTextSource>
-        <span>Source: </span>
-        <a href={textSourcePath}>
-          Wikipedia
-          <IconSource />
-        </a>
-      </PlanetTextSource>
-      {/* <MobilePlanetMenu
+      <div className="tabletSplit">
+        <h2>{data.name}</h2>
+        <p>{textParaPath}</p>
+        <PlanetTextSource>
+          <span>Source: </span>
+          <a href={textSourcePath}>
+            Wikipedia
+            <IconSource />
+          </a>
+        </PlanetTextSource>
+        {/* <MobilePlanetMenu
         style={{ maxWidth: "ok", borderColor: "ok" }}
         setClickButtonValue={setClickButtonValue}
       /> */}
-      {width > 900 && (
+      </div>
+      {width > 400 && (
         <DesktopPlanetMenu
           style={data.styles}
           buttonValue={buttonValue}
@@ -88,6 +90,31 @@ export default function PlanetText({
 
 const PlanetTextContainer = styled.div`
   text-align: center;
+
+  @media only screen and (max-width: 768px) and (min-width: 400px) {
+    grid-row: 2;
+    grid-column: 1 / 3;
+    /* max-width: 700px;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-flow: column wrap; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .tabletSplit {
+      max-width: 350px;
+      text-align: left;
+    }
+
+    & > * {
+      /* flex: 1;
+      max-width: 200px;
+      height: 200px; */
+    }
+  }
 
   @media only screen and (min-width: 900px) {
     // to do
@@ -102,6 +129,12 @@ const PlanetTextContainer = styled.div`
     font-family: var(--font-antonio);
     text-transform: uppercase;
     font-size: 40px;
+
+    @media only screen and (max-width: 768px) and (min-width: 400px) {
+      font-size: 48px;
+      font-weight: 400;
+      margin: 0 0 24px 0;
+    }
 
     @media only screen and (min-width: 900px) {
       // to do
@@ -133,6 +166,11 @@ const PlanetTextSource = styled.div`
   align-items: center;
   font-size: 12px;
   line-height: 25px;
+
+  @media only screen and (max-width: 768px) and (min-width: 400px) {
+    margin: 0;
+    margin-top: 30px;
+  }
 
   @media only screen and (min-width: 900px) {
     font-size: 14px;

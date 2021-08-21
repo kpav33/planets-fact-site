@@ -57,6 +57,13 @@ const PlanetStatsContainer = styled.div`
   grid-template: auto / auto;
   grid-gap: 8px;
 
+  @media only screen and (max-width: 768px) and (min-width: 400px) {
+    grid-row: 3;
+    grid-column: 1 / 3;
+    grid-template: 88px / repeat(4, 1fr);
+    grid-gap: 11px;
+  }
+
   @media only screen and (min-width: 900px) {
     // to do
     grid-gap: 30px;
@@ -80,6 +87,14 @@ const PlanetStatDiv = styled.div`
   padding: 9px 24px 13px 24px;
   border: 1px solid hsla(240, 6%, 54%, 0.2);
 
+  @media only screen and (max-width: 768px) and (min-width: 400px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    letter-spacing: 0.7px;
+    padding: 10px 15px 19px 15px;
+  }
+
   @media only screen and (min-width: 900px) {
     // to do
     //justify-content: center;
@@ -97,6 +112,11 @@ const PlanetStatDiv = styled.div`
     font-family: var(--font-antonio);
     font-weight: 400;
     font-size: 20px;
+
+    @media only screen and (max-width: 768px) and (min-width: 400px) {
+      font-size: 24px;
+      letter-spacing: -0.9px;
+    }
 
     @media only screen and (min-width: 900px) {
       font-size: 40px;

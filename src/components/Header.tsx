@@ -41,7 +41,7 @@ export default function Header({
         <Link to="/" onClick={handleClick}>
           <h1>The planets</h1>
         </Link>
-        {windowWidth >= 768 ? (
+        {windowWidth >= 400 ? (
           <StyledDesktopNav>
             <StyledDesktopUl>
               <StyledLinkWrapper borderColor={menuBorderColors.borderMercury}>
@@ -114,6 +114,11 @@ const StyledHeader = styled.header`
   align-items: center;
   color: var(--white);
   border-bottom: 1px solid hsla(240, 6%, 54%, 0.2);
+
+  @media only screen and (max-width: 768px) and (min-width: 400px) {
+    flex-direction: column;
+    padding: 32px 52px 0px 52px;
+  }
 
   @media only screen and (min-width: 900px) {
     padding: 0;
