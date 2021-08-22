@@ -55,7 +55,15 @@ export default function PlanetText({
       textParaPath = data.structure.content;
       textSourcePath = data.structure.source;
       break;
+    case "internal structure":
+      textParaPath = data.structure.content;
+      textSourcePath = data.structure.source;
+      break;
     case "surface":
+      textParaPath = data.geology.content;
+      textSourcePath = data.geology.source;
+      break;
+    case "surface geology":
       textParaPath = data.geology.content;
       textSourcePath = data.geology.source;
       break;

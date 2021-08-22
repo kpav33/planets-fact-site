@@ -40,10 +40,10 @@ export default function DesktopPlanetMenu({
           <span>01</span> Overview
         </button>
         <button onClick={handleClick} style={defaultStyles("structure")}>
-          <span>02</span> Structure
+          <span>02</span> Internal Structure
         </button>
         <button onClick={handleClick} style={defaultStyles("surface")}>
-          <span>03</span> Surface
+          <span>03</span> Surface Geology
         </button>
       </div>
     </StyledDesktopPlanetMenuDiv>
@@ -103,5 +103,9 @@ const StyledDesktopPlanetMenuDiv = styled.div<IStyledProps>`
   span {
     margin-right: 25px;
     color: hsl(0, 0%, 100%, 0.75);
+
+    @media only screen and (max-width: 768px) and (min-width: 400px) {
+      margin-right: 14px;
+    }
   }
 `;

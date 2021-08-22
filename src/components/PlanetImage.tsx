@@ -34,7 +34,15 @@ export default function PlanetImage({ img, buttonValue, style }: IProps) {
       getImg = `${img.internal}`;
       altText = "internal";
       break;
+    case "internal structure":
+      getImg = `${img.internal}`;
+      altText = "internal";
+      break;
     case "surface":
+      getImg = `${img.planet}`;
+      altText = "geology";
+      break;
+    case "surface geology":
       getImg = `${img.planet}`;
       altText = "geology";
       break;
@@ -48,6 +56,7 @@ export default function PlanetImage({ img, buttonValue, style }: IProps) {
     <PlanetImageContainer>
       <img alt={altText} src={getImg} style={{ maxWidth: style.maxWidth }} />
       {buttonValue === "surface" && surfaceImg}
+      {buttonValue === "surface geology" && surfaceImg}
     </PlanetImageContainer>
   );
 }
@@ -88,7 +97,8 @@ const PlanetImageContainer = styled.div`
     // max-width: 70%;
 
     @media only screen and (max-width: 768px) and (min-width: 400px) {
-      max-width: 400px !important;
+      //max-width: 400px !important;
+      padding: 0 50px;
     }
   }
 `;
@@ -105,7 +115,7 @@ const SurfaceImgDiv = styled.img`
 
   @media only screen and (max-width: 768px) and (min-width: 400px) {
     // to do
-    top: 80%;
+    top: 64%;
     height: 163px;
     width: 200px;
   }
