@@ -23,10 +23,10 @@ export default function DesktopPlanetMenu({
   function handleClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     let target = e.target as HTMLLIElement;
     // Add check to make sure object exists
-    // console.log(target.textContent?.toLowerCase());
     setClickButtonValue(target.textContent?.toLowerCase().slice(3));
   }
 
+  // Change button background color depending on which button is selected
   function defaultStyles(selection: string) {
     return buttonValue === selection
       ? { background: style.borderColor }
@@ -75,8 +75,6 @@ const StyledDesktopPlanetMenuDiv = styled.div<IStyledProps>`
 
   button {
     border: 1px solid hsla(240, 6%, 54%, 0.2);
-    //padding: 18px 0px 0px 28px;
-    // align-self: center;
     cursor: pointer;
     background: none;
     font-family: var(--font-spartan);

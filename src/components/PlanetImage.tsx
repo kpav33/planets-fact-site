@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import image from "../assets/planet-earth.svg";
 
 interface IProps {
   img: {
@@ -16,15 +15,8 @@ interface IProps {
 }
 
 export default function PlanetImage({ img, buttonValue, style }: IProps) {
-  //console.log(`.${img.planet}`);
-  //console.log(image);
-  // console.log(img);
-  // You need assests folder with images in public folder
-  // buttonValue = "geology";
-  // console.log(img);
-  // console.log(style);
-  let getImg;
-  let altText;
+  // Set different image and text depending on which button was clicked
+  let getImg, altText;
   switch (buttonValue) {
     case "overview":
       getImg = `${img.planet}`;
@@ -47,11 +39,9 @@ export default function PlanetImage({ img, buttonValue, style }: IProps) {
       altText = "geology";
       break;
   }
+  // Store surface img as seperate image and only show it when surface button is clicked
   let surfaceImg = <SurfaceImgDiv src={`${img.geology}`} />;
-  // let getImg = `${img.planet}`;SurfaceImgDiv
-  // console.log(getImg);
 
-  // ./assets/planet-mercury.svg
   return (
     <PlanetImageContainer>
       <img alt={altText} src={getImg} style={{ maxWidth: style.maxWidth }} />
@@ -62,7 +52,6 @@ export default function PlanetImage({ img, buttonValue, style }: IProps) {
 }
 
 const PlanetImageContainer = styled.div`
-  // padding: 67px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +65,6 @@ const PlanetImageContainer = styled.div`
   }
 
   @media only screen and (min-width: 900px) {
-    // to do
     grid-row: 1 / 3;
     grid-column: 1 / 3;
     align-self: center;
@@ -92,43 +80,28 @@ const PlanetImageContainer = styled.div`
   }
 
   img {
-    // Need to dinamically change this to make sure the planet images are of different sizes
-    // Instead of using styled-components theme switcher your could just create an additional "style" object in data.json for each planet and add the necessary styles there (max-width and color for each planet)
-    // max-width: 70%;
-
     @media only screen and (max-width: 768px) and (min-width: 400px) {
-      //max-width: 400px !important;
       padding: 0 50px;
     }
   }
 `;
 
 const SurfaceImgDiv = styled.img`
-  // color: red;
-  // background: url("./assets/geology-mercury.png");
   height: 133px;
   width: 170px;
   position: absolute;
   object-fit: contain;
-  // Adjust this for desktop and tablet
   top: 50%;
 
   @media only screen and (max-width: 768px) and (min-width: 400px) {
-    // to do
     top: 64%;
     height: 163px;
     width: 200px;
   }
 
   @media only screen and (min-width: 900px) {
-    // to do
     top: 100%;
     height: 163px;
     width: 200px;
   }
-
-  /* @media only screen and (min-width: 900px) {
-    height: 163px;
-    width: 200px;
-  } */
 `;

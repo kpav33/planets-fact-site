@@ -6,8 +6,6 @@ interface StyledProps {
   dotColor: string;
 }
 
-// <Link to="/url-shortening-api-landing-page/features">Features</Link>
-
 interface IProps {
   setShowMobileMenu: React.Dispatch<React.SetStateAction<any>>;
   setClickButtonValue: React.Dispatch<React.SetStateAction<string | undefined>>;
@@ -17,6 +15,7 @@ export default function MobileMenu({
   setShowMobileMenu,
   setClickButtonValue,
 }: IProps) {
+  // Set values back to default when user is switching between planets
   function handleClick() {
     setShowMobileMenu(false);
     setClickButtonValue("overview");
@@ -143,7 +142,6 @@ const StyledDot = styled.span<StyledProps>`
   background-color: ${(props) => props.dotColor};
   border-radius: 50%;
   display: inline-block;
-  //margin-right: 25px;
   position: absolute;
   right: 93%;
   top: -3px;

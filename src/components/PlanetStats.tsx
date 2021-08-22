@@ -65,14 +65,11 @@ const PlanetStatsContainer = styled.div`
   }
 
   @media only screen and (min-width: 900px) {
-    // to do
     grid-gap: 30px;
     grid-row: 3;
     grid-column: 1 / 5;
-    // align-self: center;
     grid-template: 128px / repeat(4, 1fr);
     align-self: center;
-    // padding: 0px 165px;
   }
 `;
 
@@ -96,9 +93,6 @@ const PlanetStatDiv = styled.div`
   }
 
   @media only screen and (min-width: 900px) {
-    // to do
-    //justify-content: center;
-    //align-items: flex-start;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;

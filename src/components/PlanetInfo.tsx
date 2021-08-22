@@ -45,9 +45,6 @@ export default function PlanetInfo({
   setClickButtonValue,
   width,
 }: IProps) {
-  // console.log(data[2].images.planet);
-  // console.log(buttonValue);
-  // console.log(data.styles);
   return (
     <PlanetInfoContainer>
       <PlanetImage
@@ -70,7 +67,6 @@ const PlanetInfoContainer = styled.div`
   padding: 24px;
 
   @media only screen and (min-width: 900px) {
-    // to do
     height: 938px;
     display: grid;
     grid-template: repeat(3, 300px) / repeat(2, 1fr) 50px 350px;

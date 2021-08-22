@@ -1,14 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import backgroundStars from "./assets/background-stars.svg";
 
-/*
-    font-family: 'Antonio', sans-serif;
-    font-family: 'Spartan', sans-serif;
-*/
-
 export const GlobalStyles = createGlobalStyle`
     :root {
-        // Dark mode 0°, 0%, 100%
         --text-color: hsl(0, 0%, 100%);
         --background: hsl(240, 67%, 8%);
         --gray: hsl(240, 17%, 26%);
@@ -23,9 +17,8 @@ export const GlobalStyles = createGlobalStyle`
         --bright-blue: hsl(222, 87%, 56%);
         --font-spartan: "Spartan", sans-serif;
         --font-antonio: "Antonio", sans-serif;
-
-
     }
+    
     *,
     *:before,
     *:after {
@@ -40,15 +33,9 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         color: var(--text-color);
         background: url(${backgroundStars});
-        // background-repeat: no-repeat;
-        // background-position: right;
         background-color: var(--background);
         font-size: 14px;
         font-family: "Spartan", sans-serif;
-        // font-family: "Antonio", sans-serif;
-        @media only screen and (min-width: 768px) {
-            // To do
-        }
     }
 `;
 

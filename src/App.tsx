@@ -7,28 +7,24 @@ import Header from "./components/Header";
 import MobilePlanetMenu from "./components/MobilePlanetMenu";
 import PlanetInfo from "./components/PlanetInfo";
 
-// const obj = JSON.parse(data);
-// console.log(data[0].styles);
-// Add try/catch to make sure data exists
-// console.log(window.innerWidth);
-
 interface IState {
   clickButtonValue: string | undefined;
 }
 
 function App() {
+  // Show or hide mobile menu
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  // Allow user to switch between different planet information
   const [clickButtonValue, setClickButtonValue] =
     useState<IState["clickButtonValue"]>("overview");
 
+  // Store users device width
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, [width]);
-
-  // 400px
 
   return (
     <div className="App">

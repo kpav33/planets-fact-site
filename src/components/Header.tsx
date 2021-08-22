@@ -21,6 +21,7 @@ export default function Header({
   setShowMobileMenu,
   setClickButtonValue,
 }: IProps) {
+  // Store users device width (remove duplicate, pass as props!)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function Header({
     });
   }, [windowWidth, setShowMobileMenu]);
 
+  // Handle user selection from planet submenu
   function handleClick() {
     setShowMobileMenu(false);
     setClickButtonValue("overview");
@@ -158,7 +160,6 @@ const StyledDesktopNav = styled.nav`
   margin: 0;
   margin-right: 40px;
   padding: 0;
-  // width: 100%;
   height: 85px;
 `;
 
@@ -168,12 +169,10 @@ const StyledDesktopUl = styled.ul`
   width: 665px;
   display: flex;
   justify-content: space-between;
-  // align-items: flex-end;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 11px;
   color: hsl(0, 0%, 100%, 0.75);
-  // padding-top: 10px;
   margin: 0;
   margin-top: 35px;
 `;
@@ -208,7 +207,3 @@ const StyledLinkWrapper = styled.div<IStyledProps>`
     }
   }
 `;
-
-/* @media only screen and (min-width: 1440px) {
-  
-}*/

@@ -44,8 +44,8 @@ export default function PlanetText({
   setClickButtonValue,
   width,
 }: IProps) {
-  let textParaPath;
-  let textSourcePath;
+  // Get correct image and text based on the clicked button
+  let textParaPath, textSourcePath;
   switch (buttonValue) {
     case "overview":
       textParaPath = data.overview.content;
@@ -80,10 +80,6 @@ export default function PlanetText({
             <IconSource />
           </a>
         </PlanetTextSource>
-        {/* <MobilePlanetMenu
-        style={{ maxWidth: "ok", borderColor: "ok" }}
-        setClickButtonValue={setClickButtonValue}
-      /> */}
       </div>
       {width > 400 && (
         <DesktopPlanetMenu
@@ -102,12 +98,6 @@ const PlanetTextContainer = styled.div`
   @media only screen and (max-width: 768px) and (min-width: 400px) {
     grid-row: 2;
     grid-column: 1 / 3;
-    /* max-width: 700px;
-    display: block;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-flow: column wrap; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,19 +106,11 @@ const PlanetTextContainer = styled.div`
       max-width: 350px;
       text-align: left;
     }
-
-    & > * {
-      /* flex: 1;
-      max-width: 200px;
-      height: 200px; */
-    }
   }
 
   @media only screen and (min-width: 900px) {
-    // to do
     grid-row: 1 / 3;
     grid-column: 4;
-    //align-self: center;
     text-align: left;
     padding-top: 46px;
   }
@@ -145,9 +127,7 @@ const PlanetTextContainer = styled.div`
     }
 
     @media only screen and (min-width: 900px) {
-      // to do
       font-size: 80px;
-      //line-height: 104px;
       margin: 30px 0px 23px 0px;
     }
   }
@@ -157,7 +137,6 @@ const PlanetTextContainer = styled.div`
     line-height: 22px;
 
     @media only screen and (min-width: 900px) {
-      // to do
       font-size: 14px;
       line-height: 25px;
       height: 150px;
